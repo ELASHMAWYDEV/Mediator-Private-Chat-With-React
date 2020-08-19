@@ -1,0 +1,16 @@
+body,html, #root {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  min-height: max-content;
+  overflow: auto;
+  font-family: 'Tajawal';
+}
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+  text-decoration: none;
+  outline: none;
+  font-family: 'Tajawal';
+}
