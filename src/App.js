@@ -10,7 +10,7 @@ import "./App.scss";
 
 
 //routes
-import { Login } from "./routes/index";
+import { Login, AdminLogin } from "./routes/index";
 
 class App extends Component {
   state = {};
@@ -27,6 +27,9 @@ class App extends Component {
           </Route>
           <Route path="/login" exact>
             <Login />
+          </Route>
+          <Route path="/admin/login" exact>
+            <AdminLogin />
           </Route>
         </Switch>
       </Router>

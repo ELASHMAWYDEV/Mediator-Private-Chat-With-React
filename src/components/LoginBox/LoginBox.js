@@ -4,31 +4,48 @@ import { Link } from "react-router-dom";
 import "./LoginBox.scss";
 
 class LoginBox extends Component {
-  state = {};
+  state = {
+    username: "",
+    password: "",
+  };
+
+  formHandler = (e) => {
+    e.preventDefault();
+    const username = e.target[0].value;
+    const password = e.target[1].value;
+
+    this.setState({ username, password });
+
+  };
 
   render() {
     return (
       <div className="loginBoxContainer">
-        <h2>تسجيل الدخول</h2>
+        <h2>{this.props.title}</h2>
         <span className="separator"></span>
-        <from>
+        <form onSubmit={this.formHandler}>
           <div className="inputs">
             <input
               type="text"
               name="username"
-              placeholder="اسم المستخدم المؤقت"
+              placeholder={this.props.placeholder}
             />
-            <input type="password" name="password" placeholder="كلمة المرور" />
+            <input type="password" name="password" placeholder="كلمة المرور"/>
           </div>
           <div className="submitBtnContainer">
             <button className="submitBtn" type="submit">
-              تسجيل الدخول
+              {this.props.title}
             </button>
           </div>
-        </from>
+        </form>
       </div>
     );
   }
 }
+
+LoginBox.defaultProps = {
+  placeholder: "اسم المستخدم المؤقت",
+  title: "تسجيل الدخول",
+};
 
 export default LoginBox;
